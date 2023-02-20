@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      /* Add some basic styling to the calculator */
+      body {
+        background-color: #ccc;
+      }
+      .calculator {
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid #000;
+        width: 300px;
+        height: auto;
+        padding: 20px;
+        box-shadow: 0 0 20px #000;
+      }
+      input[type="button"] {
+        background-color: #4CAF50;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 60px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="result" disabled />
+      <input type="button" value="1" onclick="append('1')" />
+      <input type="button" value="2" onclick="append('2')" />
+      <input type="button" value="3" onclick="append('3')" />
+      <input type="button" value="+" onclick="append('+')" />
+      <br />
+      <input type="button" value="4" onclick="append('4')" />
+      <input type="button" value="5" onclick="append('5')" />
+      <input type="button" value="6" onclick="append('6')" />
+      <input type="button" value="-" onclick="append('-')" />
+      <br />
+      <input type="button" value="7" onclick="append('7')" />
+      <input type="button" value="8" onclick="append('8')" />
+      <input type="button" value="9" onclick="append('9')" />
+      <input type="button" value="*" onclick="append('*')" />
+      <br />
+      <input type="button" value="C" onclick="clearResult()" />
+      <input type="button" value="0" onclick="append('0')" />
+      <input type="button" value="=" onclick="calculate()" />
+      <input type="button" value="/" onclick="append('/')" />
+    </div>
+    <script>
+      function append(value) {
+        document.getElementById("result").value += value;
+      }
+      function clearResult() {
+        document.getElementById("result").value = "";
+      }
+      function calculate() {
+        var result = eval(document.getElementById("result").value);
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
+
